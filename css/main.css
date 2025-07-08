@@ -1,0 +1,218 @@
+/* Base Styles (Mobile-First) - These styles apply to all screen sizes,
+   and are the primary styles for smaller devices */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px; /* Consider a relative unit like 0.8125rem for better scaling */
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    /* Added padding to push content away from edges on small screens */
+    padding: 0 15px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+header nav .nav-rigth-section {
+    width: auto; /* Changed from fixed 250px to auto for flexibility */
+    height: auto;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove default padding from list */
+    margin: 0; /* Remove default margin from list */
+}
+nav .nav-rigth-section a {
+    margin-right: 10px;
+    color: #000000;
+    /* Add some padding for easier tapping on mobile */
+    padding: 5px;
+}
+nav .nav-rigth-section .menu-icon {
+    background-image: url(https://static.thenounproject.com/png/756729-200.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    /* Adjust margin for spacing */
+    margin-right: 10px;
+}
+nav .nav-rigth-section img {
+    border-radius: 50%;
+    margin-left: 10px;
+    /* Make image responsive */
+    max-width: 35px; /* Set a max-width for the profile image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+main {
+    margin-top: 100px; /* Reduced margin for smaller screens */
+    text-align: center;
+    padding: 0 15px; /* Add padding to prevent content from touching screen edges */
+}
+main .main-logo {
+    width: 100%; /* Make logo container full width */
+    max-width: 300px; /* Limit max width for larger screens */
+    margin: 0 auto 35px auto; /* Center it */
+}
+main .main-logo img {
+    width: 100%; /* Make image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Original size, prevents it from becoming too large */
+}
+main .main-input {
+    width: 100%; /* Make input container full width */
+    max-width: 530px; /* Limit max width */
+    margin: 0 auto 35px auto; /* Center it */
+}
+main .main-input-container {
+    width: 100%; /* Make input container flexible */
+    max-width: 525px; /* Keep original max width */
+    border-radius: 100px;
+    border: 1px solid #dfe1e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px; /* Add some padding inside the input container */
+    box-sizing: border-box; /* Include padding in width */
+}
+main .main-input input {
+    width: 100%; /* Make input field fill available space */
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 0 10px; /* Add padding to the input text */
+}
+main .main-input-container:hover {
+    box-shadow: 0 1px 6px 0 #20212447;
+    border-color: #dfe1e500;
+}
+main .main-input .search-icon,
+main .main-input .micro-icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin: 0 5px; /* Add some spacing around icons */
+}
+main .main-input .search-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png');
+}
+main .main-input .micro-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png');
+}
+main .main-buttons {
+    width: 100%; /* Make button container full width */
+    max-width: 530px; /* Limit max width */
+    margin: 0 auto;
+    display: flex; /* Use flexbox for buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+}
+main .main-buttons div {
+    display: inline-block; /* Kept for compatibility if you have other divs inside */
+}
+main .main-buttons button {
+    height: 36px;
+    background-color: #f2f2f2;
+    border: 0;
+    font-size: 14px;
+    color: #5f6368;
+    border-radius: 5px;
+    padding: 0 15px;
+    /* margin-right: 15px; Removed as gap property on flex container handles spacing */
+    flex-shrink: 0; /* Prevent buttons from shrinking too much */
+}
+main .main-buttons button:hover {
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px #000001;
+    color: #222;
+}
+
+footer {
+    width: 100%;
+    height: auto; /* Changed to auto for flexibility */
+    position: static; /* Start with static positioning for mobile, adjust later */
+    /* bottom: 0; Removed for mobile-first, might be re-added for larger screens */
+    display: block; /* Stack items vertically by default */
+    font-size: 13px;
+    background-color: #f2f2f2;
+    border-top: 1px solid #e4e4e4;
+    padding: 10px 15px; /* Add padding for content */
+    box-sizing: border-box;
+}
+footer ul {
+    margin: 0; /* Remove default margin */
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Stack list items vertically */
+    align-items: center; /* Center items horizontally */
+    padding-left: 0;
+}
+footer .footer-left,
+footer .footer-right {
+    justify-self: center; /* Center content within grid areas if grid is applied later */
+    width: 100%; /* Take full width */
+    text-align: center; /* Center text */
+}
+footer ul li a {
+    margin: 5px 0; /* Adjust margin for vertical stacking */
+    color: #5f6368;
+    display: block; /* Make links block-level for better tap targets */
+    padding: 5px;
+}
+
+
+/* --- Media Queries --- */
+
+/* For Tablets and larger screens (e.g., min-width: 600px) */
+@media (min-width: 600px) {
+    main {
+        margin-top: 150px; /* Restore original margin for larger screens */
+    }
+
+    footer {
+        position: absolute; /* Reapply sticky footer for larger screens */
+        bottom: 0;
+        display: grid; /* Use grid for two columns */
+        grid-template-columns: 1fr 1fr;
+        height: 50px; /* Restore original height */
+        padding: 0 20px; /* Adjust padding */
+    }
+    footer ul {
+        flex-direction: row; /* Layout list items horizontally */
+        align-items: center;
+    }
+    footer .footer-left {
+        justify-self: left; /* Align left */
+    }
+    footer .footer-right {
+        justify-self: right; /* Align right */
+    }
+    footer ul li a {
+        margin: 10px; /* Restore original margin */
+        padding: 0; /* Remove extra padding */
+    }
+}
+
+/* For Desktops and even larger screens (e.g., min-width: 992px) */
+@media (min-width: 992px) {
+    /* No major changes needed for this layout beyond 600px,
+       as the main content already has a max-width.
+       You might add specific adjustments here if your design
+       becomes more complex on very large screens. */
+}
